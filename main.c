@@ -14,7 +14,13 @@
 #include "renew_font.h"
 #include "fivexfive_font.h"
 #include "encoder.h"
- 
+
+//gpio designations
+#define ENCSW 14
+#define LED1  6
+#define LED2  7
+#define LED3  8
+#define LED4  9
 
 const uint8_t num_chars_per_disp[]={7,7,7,5};
 const uint8_t *fonts[6]= {acme_font, bubblesstandard_font, crackers_font, BMSPA_font, renew_font, fivexfive_font};
@@ -79,11 +85,30 @@ and put it into  ssd1306_init below.
 */
 
 void setup_gpios(void) {
+    //pins for I2C OLED
     i2c_init(i2c1, 400000);
     gpio_set_function(2, GPIO_FUNC_I2C);
     gpio_set_function(3, GPIO_FUNC_I2C);
     gpio_pull_up(2);
     gpio_pull_up(3);
+
+    //gpio 14 is encoder switch
+    //false below means input pin
+    gpio_init(ENCSW);
+    gpio_set_dir(ENCSW, false);
+
+    //gpio 6-9 are LED's
+    //true means output pin
+    gpio_init(LED1);
+    gpio_set_dir(LED1, true);
+    gpio_init(LED2);
+    gpio_set_dir(LED2, true);
+    gpio_init(LED3);
+    gpio_set_dir(LED3, true);
+    gpio_init(LED4);
+    gpio_set_dir(LED4, true);
+    //
+
 }
 
 

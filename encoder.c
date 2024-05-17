@@ -21,7 +21,7 @@ void encoder_init()
 {
 #define ENC_A	10
 #define ENC_B	15
- #define ENC_SW	16
+ #define ENC_SW	14
 
 //initialize encoder
 
