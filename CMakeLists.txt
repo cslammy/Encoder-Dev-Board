@@ -6,7 +6,7 @@ include(pico_sdk_import.cmake)
 #project name and code here
  
 #for instance:
-project(encoder-and-1306 C CXX ASM)
+project(encoder-dev-board C CXX ASM)
 
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)

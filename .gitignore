@@ -1,3 +1,7 @@
 Deprecated
 build
-pico-ssd1306-fromgithub
+# ignore build dookie
+/build
+/deprecated or unused
+/artwork for website
+
