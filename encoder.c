@@ -7,12 +7,18 @@
 #include "hardware/gpio.h"
 void display_write(char *str1);  // show strings on 1306--function is in main.c
  
+#define LED1  6
+#define LED2  7
+#define LED3  8
+#define LED4  9
+
+#define sleeptime 250
 
 /*Encoder GPIO*/
 // GPIO 10 is Encoder phase A,  
 // GPIO 15 is Encoder phase B,
-// GPIO 12 is the encoder push botton switch.
-// change these as needed
+// GPIO 14 is the encoder push botton switch.
+ 
 
 uint8_t led_value = 0; //for callback
 
@@ -77,5 +83,25 @@ void read_from_encoder()
         B_prev = B;
       
      
+}
+
+void cycle_leds()
+{
+gpio_put(LED1,true);
+sleep_ms(sleeptime);
+gpio_put(LED1,false);
+
+gpio_put(LED2,true);
+sleep_ms(sleeptime);
+gpio_put(LED2,false);
+
+gpio_put(LED3,true);
+sleep_ms(sleeptime);
+gpio_put(LED3,false);
+
+gpio_put(LED4,true);
+sleep_ms(sleeptime);
+gpio_put(LED4,false);
+
 }
 

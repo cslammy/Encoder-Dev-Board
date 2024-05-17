@@ -8,5 +8,7 @@ void write_to_1306();
 
 void read_from_encoder();
 
+void cycle_leds();
+
 
 #endif // ENCODER_H_INCLUDED

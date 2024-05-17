@@ -50,6 +50,14 @@ int main() {
     
     //write test message to SSD1306
     display_write("Welcome");
+    cycle_leds();
+    cycle_leds();
+    cycle_leds();
+    cycle_leds();
+    cycle_leds();
+    cycle_leds();
+    cycle_leds();
+    
     sleep_ms(1000);
 
     while (2 > 0)
