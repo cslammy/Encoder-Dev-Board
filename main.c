@@ -51,24 +51,28 @@ int main() {
     //write test message to SSD1306
     display_write("Welcome");
     cycle_leds();
-    cycle_leds();
-    cycle_leds();
-    cycle_leds();
-    cycle_leds();
-    cycle_leds();
-    cycle_leds();
-    
+ 
+
     sleep_ms(1000);
 
     while (2 > 0)
     {
 
- 
-
     //get encoder reading.
     read_from_encoder();
    
+   if (!gpio_get(ENCSW))
+        {
+        //flash ext LED's to test encoder switch
+        cycle_leds();
+
+        //UART.c functions--turn onboard LED on, write to serial port
+        led_on();
+        sleep_ms(200);
+        led_off();
  
+        }
+
     }
 }
 /*wiring.
